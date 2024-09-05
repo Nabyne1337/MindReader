@@ -6,6 +6,7 @@
 using namespace std;
 
 int a, b, yourtry;
+
 enum ConsoleColor
 {
     Black = 0,
@@ -31,6 +32,7 @@ void SetColor(ConsoleColor text, ConsoleColor background)
     HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hStdOut, (WORD)((background << 4) | text));
 }
+
 int main() {
     setlocale(LC_ALL, "");
 
@@ -67,7 +69,7 @@ int main() {
                 if (i == 2) {
                     SetColor(White, Black);
                     cout << "Попытки закончились!  \nНажмите Enter для перезапуска..." << endl;
-                    _getch();
+                    _getch(); break;
                 }
             }
         }
