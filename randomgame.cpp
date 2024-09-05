@@ -1,12 +1,12 @@
-﻿#include <iostream>
+#include <iostream>
 #include <ctime>
+#include <conio.h>
 
 using namespace std;
 
 int a, b, yourtry;
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "");
 
     srand(time(0));
@@ -22,15 +22,21 @@ int main()
             << " ##:::. ##: ########: ##::. ##:::: ##:::: ########: ##:::. ##: ###:. ######::. ######::\n"
             << "..:::::..::........::..::::..:::::..:::::........::..:::::..::...:::......::::......:::" << "\n" << endl;
         b = rand() % 10 + 1;
-        for (int i {0}; i < 3; i++) {
+        for (int i {0}; i <= 2; i++) {
+            //cout << i << endl;
             //cout << b << "\n"; проверка рандомизации
             cout << "Угадайте число от 1 до 10" << endl;
             cin >> a;
             if (a == b) {
-                cout << "Вы угадали! Заданное число было " << a << endl; break;
+                cout << "Вы угадали! Заданное число было " << a << endl;
+                cout << "Нажмите Enter для перезапуска..." << endl; _getch();
             }
             else {
-                cout << "Вы не угадали ! Попыток осталось ==> " << yourtry - i - 1<< endl;
+                cout << "Вы не угадали ! Попыток осталось ==> " << yourtry - (i + 1) << endl;
+                if (i == 2) {
+                    cout << "Попытки закончились!  \nНажмите Enter для перезапуска..." << endl;
+                    _getch();
+                }
             }
         }
     }
