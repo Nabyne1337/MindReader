@@ -68,8 +68,7 @@ int main() {
                 cout << "Вы не угадали ! Попыток осталось ==> " << yourtry - (i + 1) << endl;
                 if (i == 2) {
                     SetColor(White, Black);
-                    cout << "Попытки закончились!  \nНажмите Enter для перезапуска..." << endl;
-                    _getch(); break;
+                    cout << "Попытки закончились!  \nНажмите Enter для перезапуска..." << endl; _getch(); break;
                 }
             }
         }
